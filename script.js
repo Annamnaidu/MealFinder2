@@ -1,26 +1,50 @@
-const hamburger = document.getElementById("hamburger");
-const menu = document.getElementById("menu");
-hamburger.addEventListener("click", () => {
-menu.classList.toggle("show");
-});
+{
+  const hamburger = document.getElementById("hamburger");
+  const menu = document.getElementById("menu");
 
-async function fetchdata() {
-  let response = await fetch("https://www.themealdb.com/api/json/v1/1/categories.php");
-  let data = await response.json();
-  console.log(data);
-
-  // Loop through categories instead of data
-  data.categories.map((item) => {
-    let card = `
-      <div class="item">
-        <img src="${item.strCategoryThumb}" alt="">
-        <h1>${item.strCategory}</h1>
-        <p>${item.strCategoryDescription}</p>
-      </div>
-    `;
-    // Example: show in document
-    document.body.innerHTML += card;
+  hamburger.addEventListener("click", () => {
+    menu.classList.toggle("show");
   });
 }
 
-fetchdata();
+{
+  let allCategories = []; // store all categories
+
+  async function fetchdata() {
+    let response = await fetch("https://www.themealdb.com/api/json/v1/1/categories.php");
+    let data = await response.json();
+    console.log(data);
+
+    allCategories = data.categories; // keep the data
+    renderCategories(allCategories); // first render
+  }
+
+  function renderCategories(categories) {
+    // clear old results
+    document.querySelectorAll(".item-details").forEach(el => el.remove());
+
+    // render new ones
+    categories.forEach((item) => {
+      let card = `
+      <div class="item-details">
+          <div class="item">
+            <h1>${item.strCategory}</h1>
+            <img src="${item.strCategoryThumb}" alt="">
+        </div>
+      </div>
+      `;
+      document.querySelector(".heading").insertAdjacentHTML("afterend", card);
+    });
+  }
+
+  // 🔎 search feature
+  document.querySelector(".search-container input").addEventListener("input", (e) => {
+    const searchText = e.target.value.toLowerCase();
+    const filtered = allCategories.filter(cat =>
+      cat.strCategory.toLowerCase().includes(searchText)
+    );
+    renderCategories(filtered);
+  });
+
+  fetchdata();
+}
