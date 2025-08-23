@@ -28,8 +28,9 @@
       let card = `
       <div class="item-details">
           <div class="item">
-            <h1>${item.strCategory}</h1>
-            <img src="${item.strCategoryThumb}" alt="">
+            <h2>${item.strCategory}</h2>
+            <a href="./Vegetarian/index.html">
+             <img src="${item.strCategoryThumb}" alt=""></a>
         </div>
       </div>
       `;
