@@ -29,7 +29,7 @@
       <div class="item-details">
           <div class="item">
             <h2>${item.strCategory}</h2>
-            <a href="./Vegetarian/index.html">
+            <a href="../Vegetarian/index.html">
              <img src="${item.strCategoryThumb}" alt=""></a>
         </div>
       </div>
