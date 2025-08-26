@@ -144,11 +144,14 @@ body {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
 }
 .navBar-cabbage img{
     background-color: orangered;
     width: 80px;
-    height: 40px;
+    height: 90px;
     border-radius: 100%;
     color: orangered;
     border: 15px solid orangered;
@@ -156,17 +159,76 @@ body {
 .details{
   border: 2px solid black;
   display: flex;
-  gap: 10%;
+  gap: 10px;
   padding:50px 40px;
+  margin: 0px 38px;
 }
 
 .detailImage{
-  width: 30%;
-  height: 30%;
+  width: 90%;
+  height: 70%;
   border: 2px solid red;
 }
-
-.details h1 {
-
+.Content-Dettails h1{
+  color: orangered;
 }
+.Content-Dettails span {
+  display: block;           /* make span behave like a line */
+  width: 95%;              /* adjust width of line */
+  height: 5px;              /* thickness of line */
+  background:orangered;        /* line color */
+  border-radius: 3px;       /* optional: rounded edges */
+}
+.ingredients {
+  width: 90%;
+  height: 230px;
+  padding: 5px 20px;
+  background-color: orangered;
+}
+
+.ingredients h3{
+  color: white;
+  font-size: 25px;
+}
+
+.ingredients ol {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 items per row */
+  gap: 30px 25px; /* row gap & column gap */
+  counter-reset: list-counter; /* reset counter */
+  list-style: none; /* remove default numbers */
+  padding: 0;
+  margin: 0;
+}
+
+.ingredients li {
+  counter-increment: list-counter;
+  position: relative;
+  padding-left: 45px; /* space for circle */
+  color: white;
+}
+
+/* Number inside circle */
+.ingredients li::before {
+  content: counter(list-counter);
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  background: green;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+
+
+
+
 
