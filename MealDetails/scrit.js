@@ -38,10 +38,29 @@ async function fetchdata() {
             <li>${item.strIngredient7}</li>
             <li>${item.strIngredient8}</li>
           </ol>
-        </div>
+        </div>  
+      </div>
+      </div>
+        <h2 class="measure">Measure : </h2>
         
+      <div class="measure-details">
+          <ul>
+            <li>${item.strMeasure1}</li>
+            <li>${item.strMeasure2}</li>
+            <li>${item.strMeasure3}</li>
+            <li>${item.strMeasure4}</li>
+            <li>${item.strMeasure5}</li>
+            <li>${item.strMeasure6}</li>
+            <li>${item.strMeasure7}</li>
+            <li>${item.strMeasure8}</li>
+          </ul>
       </div>
-      </div>
+      <div class="instructions">
+      <h2>Instructions : </h2>
+      <ul>
+      <li>${item.strInstructions}</li>
+      </ul>
+      </div>           
     `;
 
     // Append to body (or any container you want)
@@ -50,3 +69,32 @@ async function fetchdata() {
 }
 
 fetchdata();
+
+
+async function fetchdata1() {
+  let response = await fetch("https://www.themealdb.com/api/json/v1/1/categories.php");
+  let data = await response.json();
+  console.log(data);
+
+  // Use data.categories
+  data.categories.forEach((item) => {
+    let card = `
+    <div class="categoryItem-details">
+      <div class="item-details">
+        <div class="item">
+          <h3>${item.strCategory}</h3>
+          <a href="../Vegetarian/index.html">
+            <img src="${item.strCategoryThumb}" alt="">
+          </a>
+        </div>
+      </div>
+    </div>
+    `;
+
+    // Append to container in your HTML
+    document.body.insertAdjacentHTML("beforeend", card);
+  });
+}
+
+// Call function
+fetchdata1();
