@@ -2,6 +2,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  background-color: whitesmoke;
 }
 
 .navbar {
@@ -158,11 +159,11 @@ body {
 }
 .details{
   height: 600px;
-  border: 2px solid black;
+  background-color: white;
   display: flex;
   justify-content: space-evenly;
   padding:0px 40px;
-  margin: 0px 38px;
+  margin: 40px 38px;
 }
 
 .detailImage{
@@ -234,14 +235,13 @@ body {
   font-size: 14px;
 }
 .measure{
-  border: 2px solid red;
   margin: 20px 38px;
   font-size: 25px;
   font-weight: bolder;
 }
 
 .measure-details { 
-  border: 1px solid black;
+  border: 1.3px solid black;
   margin: 0px 38px;
   background-color: whitesmoke;
   color: black;
@@ -306,7 +306,7 @@ body {
   padding: 20px;               /* some space around items */
 }
 .item-details {
-  display: inline-block;       /* allow items to sit side by side */
+  display: inline-block;      /* allow items to sit side by side */
   margin: 40px;
 }
 
@@ -351,13 +351,205 @@ body {
 }
 
 
+/* Data */
+.heading {
+  display: flex; 
+  width: 60px;
+  margin: 40px;
+  border-bottom: 5px solid rgb(190, 13, 13);
+  text-decoration: none;
+}
+.item-details1 {
+  display: inline-block;       /* allow items to sit side by side */
+  margin: 30px 25px;
+  gap: 30px;
+  background-color:;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 3px;
+  padding: 15px;
+  text-align: center;
+  transition: 0.3s;
+  height: 100%;
+}
+
+.item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.item img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 0px;
+  margin-bottom: 10px;
+}
+
+.item h6 {
+  font-size: 15px;
+  margin: 10px 0 0;
+}
+
+h6{
+  width: 50%;
+ position: relative;
+ left: 50%;
+ border: 2px solid orange;
+ background-color: orangered;
+ color: white;
+ border-radius: 5px;
+}
 
 
+/* ===============================
+   Media Queries for Responsiveness
+   =============================== */
 
+/* 🔹 Large Screens (default styles = laptop/desktop) 
+   Already covered by your base CSS */
 
+/* 🔹 Tablets (≤ 992px) */
+@media (max-width: 992px) {
+  .navbar {
+    padding: 8px 15px;
+  }
 
+  .search-container input {
+    font-size: 20px;
+  }
 
+  .details {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    margin: 20px;
+    padding: 20px;
+  }
 
+  .detailImage {
+    width: 90%;
+    height: auto;
+  }
 
+  .Content-Dettails {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .ingredients ol {
+    grid-template-columns: repeat(2, 1fr); /* 2 per row */
+  }
+
+  .measure-details ul {
+    grid-template-columns: 1fr; /* stack vertically */
+  }
+
+  .item-details1 {
+    width: 45%;   /* 2 items per row */
+    margin: 15px auto;
+  }
+}
+
+/* 🔹 Mobile (≤ 768px) */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: row;
+  }
+
+  .navBarlist h5 {
+    font-size: 14px;
+  }
+
+  .hamburger {
+    display: flex; /* show hamburger menu */
+  }
+
+  .menu {
+    width: 200px;
+    padding: 20px;
+  }
+
+  .header {
+    height: 300px;
+    padding: 20px;
+  }
+
+  .search-container {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .search-container input {
+    font-size: 18px;
+    width: 100%;
+  }
+
+  .ingredients ol {
+    grid-template-columns: 1fr; /* 1 per row */
+  }
+
+  .item-details1 {
+    width: 100%; /* full width */
+    margin: 10px 0;
+  }
+
+  h6, .item h3 {
+    width: 80%;
+    left: 10%;
+    font-size: 13px;
+  }
+}
+
+/* 🔹 Small Mobile (≤ 480px) */
+@media (max-width: 480px) {
+  .navbar {
+    flex-direction: row;
+    padding: 6px 10px;
+  }
+
+  .navBarlist img {
+    width: 30px;
+    margin-right: 5px;
+  }
+
+  .navBarlist h5 a {
+    font-size: 12px;
+  }
+
+  .hamburger span {
+    width: 20px;
+    height: 2px;
+  }
+
+  .header {
+    height: 250px;
+    font-size: 14px;
+  }
+
+  .search-container input {
+    font-size: 16px;
+    padding: 6px 10px;
+  }
+
+  .ingredients h3 {
+    font-size: 20px;
+  }
+
+  .item-details1 {
+    width: 100%;
+    margin: 8px 0;
+  }
+
+  h6, .item h3 {
+    width: 90%;
+    left: 5%;
+    font-size: 12px;
+  }
+}
 
 

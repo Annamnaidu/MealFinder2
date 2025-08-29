@@ -26,9 +26,9 @@
     // render new ones
     categories.forEach((item) => {
       let card = `
-      <div class="item-details">
+      <div class="item-details1">
           <div class="item">
-            <h2>${item.strCategory}</h2>
+            <h6>${item.strCategory}</h6>
             <a href="../Vegetarian/index.html">
              <img src="${item.strCategoryThumb}" alt=""></a>
         </div>

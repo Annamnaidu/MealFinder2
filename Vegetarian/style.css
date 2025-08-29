@@ -182,40 +182,58 @@ body {
   width: 5px;
 }
 
-/* ===================== MEDIA QUERIES ===================== */
 
-/* 📱 Mobile (up to 480px) */
-@media (max-width: 480px){
-  .VegetarianContent {
-    width: 92%;
-    padding: 0 5px;
+/* ===============================
+   Media Queries for Responsiveness
+   =============================== */
+
+/* 🔹 Tablets (≤ 992px) */
+@media (max-width: 992px) {
+  .navbar {
+    padding: 8px 15px;
   }
 
-  .heading {
-    width: 100%;
-    padding-left: 20px;
+  .search-container input {
+    font-size: 20px;
   }
 
   .mealsDetailsList {
-    width: 100%;
-    padding: 10px;
-    flex-direction: column;   /* stack vertically */
-    align-items: center;
+    justify-content: center;     /* center items */
     gap: 20px;
   }
 
   .mealsDetails {
-    width: 100%;              /* full width for each card */
-    max-width: 320px;
+    width: 28%;   /* 3 per row */
+  }
+}
+
+/* 🔹 Mobile (≤ 768px) */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: row;
   }
 
-  /* ✅ Adjust search-container for mobile */
+  .navBarlist h5 {
+    font-size: 14px;
+  }
+
+  .hamburger {
+    display: flex; /* show hamburger menu */
+  }
+
+  .menu {
+    width: 200px;
+    padding: 20px;
+  }
+
+  .header {
+    height: 300px;
+    padding: 20px;
+  }
+
   .search-container {
-    flex-direction: column;   /* stack input + icon */
-    align-items: stretch;
-    gap: 15px;
-    width: 100%;
-    padding: 0 10px;
+    flex-direction: column;
+    gap: 8px;
   }
 
   .search-container input {
@@ -223,64 +241,43 @@ body {
     width: 100%;
   }
 
-  .search-container img {
-    align-self: center;
+  .mealsDetails {
+    width: 45%;  /* 2 per row */
+  }
+}
+
+/* 🔹 Small Mobile (≤ 480px) */
+@media (max-width: 480px) {
+  .navbar {
+    flex-direction: row;
+    padding: 6px 10px;
+  }
+
+  .navBarlist img {
+    width: 30px;
+    margin-right: 5px;
+  }
+
+  .navBarlist h5 a {
+    font-size: 12px;
+  }
+
+  .hamburger span {
+    width: 20px;
+    height: 2px;
   }
 
   .header {
-    height: 250px;
-  }
-}
-
-/* 💻 Tablet (481px–1024px) */
-@media (min-width: 481px) and (max-width: 1024px){
-  .VegetarianContent {
-    width: 95%;
-  }
-
-  .heading {
-    width: 90%;
-    padding-left: 30px;
-  }
-
-  .mealsDetailsList {
-    justify-content: center;
-  }
-
-  .mealsDetails {
-    width: 45%; /* two per row */
-  }
-
-  .search-container {
-    flex-direction: row;   /* side by side */
-    gap: 10px;
+    height: 220px;
+    font-size: 14px;
   }
 
   .search-container input {
-    font-size: 20px;
-  }
-
-  .header {
-    height: 300px;
-  }
-}
-
-/* 🖥️ Large Screens (1025px–1280px) */
-@media (min-width: 1025px) and (max-width: 1280px){
-  .VegetarianContent {
-    width: 100%;
-  }
-
-  .heading {
-    width: 96%;
+    font-size: 16px;
+    padding: 6px 10px;
   }
 
   .mealsDetails {
-    width: 22%;
-  }
-
-  .search-container input {
-    font-size: 22px;
+    width: 100%; /* 1 per row */
   }
 }
-

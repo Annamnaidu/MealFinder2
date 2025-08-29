@@ -144,7 +144,8 @@
   text-decoration: none;
 }
 
-.item-details {
+.item-details1 {
+  border: 2px solid red;
   display: inline-block;       /* allow items to sit side by side */
   margin: 40px;
 }
@@ -174,12 +175,12 @@
   margin-bottom: 10px;
 }
 
-.item h2 {
+.item h6 {
   font-size: 15px;
   margin: 10px 0 0;
 }
 
-h2{
+h6{
   width: 50%;
  position: relative;
  left: 50%;
@@ -189,3 +190,102 @@ h2{
  border-radius: 5px;
 }
 
+/* ===============================
+   Media Queries for Responsiveness
+   =============================== */
+
+/* 🔹 Large screens (default = laptops/desktops) 
+   Already handled by your base CSS */
+
+/* 🔹 Tablets (max-width: 992px) */
+@media (max-width: 992px) {
+  .navbar {
+    padding: 8px 15px;
+  }
+
+  .search-container input {
+    font-size: 20px;
+  }
+
+  .item-details1 {
+    display: inline-block;
+    width: 45%;   /* 2 items per row */
+    margin: 20px;
+  }
+
+  h6 {
+    width: 70%;
+    left: 15%;
+    font-size: 14px;
+  }
+}
+
+/* 🔹 Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: row;
+  }
+
+  .navBarlist h5 {
+    font-size: 14px;
+  }
+
+  .search-container {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .search-container input {
+    font-size: 18px;
+    width: 100%;
+  }
+
+  .item-details1 {
+    width: 100%;  /* 1 item per row */
+    margin: 15px 0;
+  }
+
+  h6 {
+    width: 80%;
+    left: 10%;
+    font-size: 13px;
+  }
+}
+
+/* 🔹 Small mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  .navbar {
+    flex-direction: row;
+    padding: 6px 10px;
+  }
+
+  .navBarlist img {
+    width: 30px;
+    margin-right: 5px;
+  }
+
+  .navBarlist h5 a {
+    font-size: 12px;
+  }
+
+  .hamburger span {
+    width: 25px;
+    height: 3px;
+  }
+
+  .search-container input {
+    font-size: 16px;
+    padding: 6px 10px;
+  }
+
+  .item-details1 {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  h6 {
+    width: 90%;
+    left: 5%;
+    font-size: 12px;
+  }
+}
